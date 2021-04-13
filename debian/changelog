@@ -1,3 +1,32 @@
+siridb-server (2.0.44-0~tt1) unstable; urgency=medium
+
+  * New upstream release
+    - Improve imap data structure (#168)
+    - Added ignore_broken_data option (@ubnt-michals, #172)
+    - Fixed siridb_time_now for arm32 builds (@srdgame, #169)
+
+ -- Jeroen van der Heijden <jeroen@transceptor.technology>  Tue, 06 Apr 2021 11:39:12 +0200
+
+siridb-server (2.0.43-0~tt1.1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Improve cross building: (Closes: #-1)
+    + cross.patch: Make gcc substitutable.
+    + Let dh_auto_build pass cross tools to make.
+
+ -- Helmut Grohne <helmut@subdivi.de>  Tue, 09 Feb 2021 13:48:47 +0100
+
+siridb-server (2.0.43-0~tt1) unstable; urgency=medium
+
+  * New upstream release
+    - Fixed HTTP pipeline issue (@srdgame, #161)
+    - Fixed possible memory corruption (@ubnt-michals, #158)
+    - Changed SIRIDB_DB_PATH configuration (#154)
+    - Fixed shard duration for ARM builds (@srdgame, #164)
+    - Use IPv4 for health and API when configured (@ubnt-michals, #155)
+
+ -- Jeroen van der Heijden <jeroen@transceptor.technology>  Thu, 04 Feb 2021 15:36:02 +0100
+
 siridb-server (2.0.42-0~tt1) unstable; urgency=medium
 
   * New upstream release

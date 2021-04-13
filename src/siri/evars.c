@@ -1,7 +1,7 @@
 /*
  * siri/evars.c
  */
-
+#include <stdbool.h>
 #include <siri/evars.h>
 #include <siri/net/tcp.h>
 
@@ -11,7 +11,7 @@ static void evars__bool(const char * evar, uint8_t * b)
     if (!u8str)
         return;
 
-    *b = (_Bool) strtoul(u8str, NULL, 10);
+    *b = (bool) strtoul(u8str, NULL, 10);
 }
 
 static void evars__u16(const char * evar, uint16_t * u16)
@@ -143,6 +143,9 @@ void siri_evars_parse(siri_t * siri)
     evars__bool(
             "SIRIDB_ENABLE_SHARD_AUTO_DURATION",
             &siri->cfg->shard_auto_duration);
+    evars__bool(
+            "SIRIDB_IGNORE_BROKEN_DATA",
+            &siri->cfg->ignore_broken_data);
     evars__to_strn(
             "SIRIDB_DB_PATH",
             siri->cfg->db_path,
